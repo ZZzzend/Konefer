@@ -13,6 +13,8 @@
 		8669026925DF8E8B00CFA6DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8669026725DF8E8B00CFA6DB /* Main.storyboard */; };
 		8669026B25DF8E8C00CFA6DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8669026A25DF8E8C00CFA6DB /* Assets.xcassets */; };
 		8669026E25DF8E8C00CFA6DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8669026C25DF8E8C00CFA6DB /* LaunchScreen.storyboard */; };
+		8669027825DF978B00CFA6DB /* CVStocksAndFavour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8669027625DF978B00CFA6DB /* CVStocksAndFavour.swift */; };
+		8669027925DF978B00CFA6DB /* CVStocksAndFavour.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8669027725DF978B00CFA6DB /* CVStocksAndFavour.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		8669026A25DF8E8C00CFA6DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8669026D25DF8E8C00CFA6DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8669026F25DF8E8C00CFA6DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8669027625DF978B00CFA6DB /* CVStocksAndFavour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVStocksAndFavour.swift; sourceTree = "<group>"; };
+		8669027725DF978B00CFA6DB /* CVStocksAndFavour.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CVStocksAndFavour.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 		8669026025DF8E8B00CFA6DB /* Konefer */ = {
 			isa = PBXGroup;
 			children = (
+				8669027625DF978B00CFA6DB /* CVStocksAndFavour.swift */,
+				8669027725DF978B00CFA6DB /* CVStocksAndFavour.xib */,
 				8669026125DF8E8B00CFA6DB /* AppDelegate.swift */,
 				8669026325DF8E8B00CFA6DB /* SceneDelegate.swift */,
 				8669026525DF8E8B00CFA6DB /* ViewController.swift */,
@@ -124,6 +130,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8669027925DF978B00CFA6DB /* CVStocksAndFavour.xib in Resources */,
 				8669026E25DF8E8C00CFA6DB /* LaunchScreen.storyboard in Resources */,
 				8669026B25DF8E8C00CFA6DB /* Assets.xcassets in Resources */,
 				8669026925DF8E8B00CFA6DB /* Main.storyboard in Resources */,
@@ -137,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8669027825DF978B00CFA6DB /* CVStocksAndFavour.swift in Sources */,
 				8669026625DF8E8B00CFA6DB /* ViewController.swift in Sources */,
 				8669026225DF8E8B00CFA6DB /* AppDelegate.swift in Sources */,
 				8669026425DF8E8B00CFA6DB /* SceneDelegate.swift in Sources */,
