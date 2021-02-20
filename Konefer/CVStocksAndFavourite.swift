@@ -7,8 +7,9 @@
 
 import UIKit
 
-class CVStocksAndFavour: UICollectionViewCell {
-
+class CVStocksAndFavourite: UICollectionViewCell {
+    @IBOutlet weak var listLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
