@@ -9,15 +9,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CVStocksAndFavourite" customModule="Konefer" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="134" height="65"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MenuCollViewCell" customModule="Konefer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="862" height="360"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="134" height="65"/>
+                <rect key="frame" x="0.0" y="0.0" width="862" height="360"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stocks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C6R-YD-6qw">
-                        <rect key="frame" x="39.5" y="44" width="55" height="21"/>
+                        <rect key="frame" x="403.5" y="174.5" width="55" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -29,11 +29,11 @@
                 <constraint firstItem="C6R-YD-6qw" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="9wj-Sc-b7O"/>
                 <constraint firstItem="C6R-YD-6qw" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="u1i-EA-brs"/>
             </constraints>
-            <size key="customSize" width="134" height="65"/>
+            <size key="customSize" width="862" height="360"/>
             <connections>
-                <outlet property="listLabel" destination="C6R-YD-6qw" id="0sX-f0-WTp"/>
+                <outlet property="listLabel" destination="C6R-YD-6qw" id="ERL-dR-sTr"/>
             </connections>
-            <point key="canvasLocation" x="108.69565217391305" y="67.96875"/>
+            <point key="canvasLocation" x="636.23188405797111" y="166.74107142857142"/>
         </collectionViewCell>
     </objects>
 </document>

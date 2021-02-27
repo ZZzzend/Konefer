@@ -13,10 +13,14 @@
 		8669026925DF8E8B00CFA6DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8669026725DF8E8B00CFA6DB /* Main.storyboard */; };
 		8669026B25DF8E8C00CFA6DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8669026A25DF8E8C00CFA6DB /* Assets.xcassets */; };
 		8669026E25DF8E8C00CFA6DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8669026C25DF8E8C00CFA6DB /* LaunchScreen.storyboard */; };
-		8669027825DF978B00CFA6DB /* CVStocksAndFavourite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8669027625DF978B00CFA6DB /* CVStocksAndFavourite.swift */; };
-		8669027925DF978B00CFA6DB /* CVStocksAndFavourite.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8669027725DF978B00CFA6DB /* CVStocksAndFavourite.xib */; };
-		86C20DC625E0DB1400385E8A /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C20DC525E0DB1400385E8A /* DataProvider.swift */; };
-		86C20DC925E0DCC400385E8A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C20DC825E0DCC400385E8A /* DataManager.swift */; };
+		8669027825DF978B00CFA6DB /* MenuCollViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8669027625DF978B00CFA6DB /* MenuCollViewCell.swift */; };
+		8669027925DF978B00CFA6DB /* MenuCollViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8669027725DF978B00CFA6DB /* MenuCollViewCell.xib */; };
+		867A3DE025EA0262007C619E /* StocksCollViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867A3DDE25EA0262007C619E /* StocksCollViewCell.swift */; };
+		867A3DE125EA0262007C619E /* StocksCollViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 867A3DDF25EA0262007C619E /* StocksCollViewCell.xib */; };
+		867A3DE825EA0566007C619E /* MainVCDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867A3DE725EA0566007C619E /* MainVCDataSource.swift */; };
+		86E49E6425EA06DC0037B115 /* MainVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E49E6325EA06DC0037B115 /* MainVCDelegate.swift */; };
+		86E49E6825EA0A390037B115 /* StocksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E49E6625EA0A390037B115 /* StocksTableViewCell.swift */; };
+		86E49E6925EA0A390037B115 /* StocksTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86E49E6725EA0A390037B115 /* StocksTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,10 +32,14 @@
 		8669026A25DF8E8C00CFA6DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8669026D25DF8E8C00CFA6DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8669026F25DF8E8C00CFA6DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8669027625DF978B00CFA6DB /* CVStocksAndFavourite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVStocksAndFavourite.swift; sourceTree = "<group>"; };
-		8669027725DF978B00CFA6DB /* CVStocksAndFavourite.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CVStocksAndFavourite.xib; sourceTree = "<group>"; };
-		86C20DC525E0DB1400385E8A /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
-		86C20DC825E0DCC400385E8A /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		8669027625DF978B00CFA6DB /* MenuCollViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollViewCell.swift; sourceTree = "<group>"; };
+		8669027725DF978B00CFA6DB /* MenuCollViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCollViewCell.xib; sourceTree = "<group>"; };
+		867A3DDE25EA0262007C619E /* StocksCollViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksCollViewCell.swift; sourceTree = "<group>"; };
+		867A3DDF25EA0262007C619E /* StocksCollViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StocksCollViewCell.xib; sourceTree = "<group>"; };
+		867A3DE725EA0566007C619E /* MainVCDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVCDataSource.swift; sourceTree = "<group>"; };
+		86E49E6325EA06DC0037B115 /* MainVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVCDelegate.swift; sourceTree = "<group>"; };
+		86E49E6625EA0A390037B115 /* StocksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksTableViewCell.swift; sourceTree = "<group>"; };
+		86E49E6725EA0A390037B115 /* StocksTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StocksTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,19 +72,39 @@
 		8669026025DF8E8B00CFA6DB /* Konefer */ = {
 			isa = PBXGroup;
 			children = (
-				8669027625DF978B00CFA6DB /* CVStocksAndFavourite.swift */,
-				8669027725DF978B00CFA6DB /* CVStocksAndFavourite.xib */,
+				867A3DE325EA04DF007C619E /* Controller */,
 				8669026125DF8E8B00CFA6DB /* AppDelegate.swift */,
 				8669026325DF8E8B00CFA6DB /* SceneDelegate.swift */,
-				8669026525DF8E8B00CFA6DB /* MainViewController.swift */,
-				86C20DC525E0DB1400385E8A /* DataProvider.swift */,
-				86C20DC825E0DCC400385E8A /* DataManager.swift */,
-				8669026725DF8E8B00CFA6DB /* Main.storyboard */,
 				8669026A25DF8E8C00CFA6DB /* Assets.xcassets */,
 				8669026C25DF8E8C00CFA6DB /* LaunchScreen.storyboard */,
 				8669026F25DF8E8C00CFA6DB /* Info.plist */,
 			);
 			path = Konefer;
+			sourceTree = "<group>";
+		};
+		867A3DE325EA04DF007C619E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				867A3DE625EA0521007C619E /* Cells */,
+				8669026525DF8E8B00CFA6DB /* MainViewController.swift */,
+				867A3DE725EA0566007C619E /* MainVCDataSource.swift */,
+				86E49E6325EA06DC0037B115 /* MainVCDelegate.swift */,
+				8669026725DF8E8B00CFA6DB /* Main.storyboard */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		867A3DE625EA0521007C619E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8669027625DF978B00CFA6DB /* MenuCollViewCell.swift */,
+				8669027725DF978B00CFA6DB /* MenuCollViewCell.xib */,
+				867A3DDE25EA0262007C619E /* StocksCollViewCell.swift */,
+				867A3DDF25EA0262007C619E /* StocksCollViewCell.xib */,
+				86E49E6625EA0A390037B115 /* StocksTableViewCell.swift */,
+				86E49E6725EA0A390037B115 /* StocksTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,8 +164,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8669027925DF978B00CFA6DB /* CVStocksAndFavourite.xib in Resources */,
+				8669027925DF978B00CFA6DB /* MenuCollViewCell.xib in Resources */,
 				8669026E25DF8E8C00CFA6DB /* LaunchScreen.storyboard in Resources */,
+				86E49E6925EA0A390037B115 /* StocksTableViewCell.xib in Resources */,
+				867A3DE125EA0262007C619E /* StocksCollViewCell.xib in Resources */,
 				8669026B25DF8E8C00CFA6DB /* Assets.xcassets in Resources */,
 				8669026925DF8E8B00CFA6DB /* Main.storyboard in Resources */,
 			);
@@ -150,10 +180,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8669027825DF978B00CFA6DB /* CVStocksAndFavourite.swift in Sources */,
-				86C20DC925E0DCC400385E8A /* DataManager.swift in Sources */,
+				867A3DE825EA0566007C619E /* MainVCDataSource.swift in Sources */,
+				8669027825DF978B00CFA6DB /* MenuCollViewCell.swift in Sources */,
+				86E49E6825EA0A390037B115 /* StocksTableViewCell.swift in Sources */,
+				867A3DE025EA0262007C619E /* StocksCollViewCell.swift in Sources */,
+				86E49E6425EA06DC0037B115 /* MainVCDelegate.swift in Sources */,
 				8669026625DF8E8B00CFA6DB /* MainViewController.swift in Sources */,
-				86C20DC625E0DB1400385E8A /* DataProvider.swift in Sources */,
 				8669026225DF8E8B00CFA6DB /* AppDelegate.swift in Sources */,
 				8669026425DF8E8B00CFA6DB /* SceneDelegate.swift in Sources */,
 			);
