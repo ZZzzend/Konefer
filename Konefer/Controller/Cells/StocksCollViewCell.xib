@@ -17,18 +17,18 @@
                 <rect key="frame" x="0.0" y="0.0" width="239" height="239"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TcF-ol-YlC">
-                        <rect key="frame" x="-1" y="0.0" width="240" height="239"/>
+                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TcF-ol-YlC">
+                        <rect key="frame" x="0.0" y="0.0" width="239" height="239"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </tableView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="TcF-ol-YlC" secondAttribute="trailing" id="33U-K1-rH8"/>
-                <constraint firstItem="ZTg-uK-7eu" firstAttribute="leading" secondItem="TcF-ol-YlC" secondAttribute="leading" constant="1" id="J3T-zi-vrL"/>
-                <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="TcF-ol-YlC" secondAttribute="bottom" id="f3q-9J-0jc"/>
-                <constraint firstItem="ZTg-uK-7eu" firstAttribute="top" secondItem="TcF-ol-YlC" secondAttribute="top" constant="44" id="w5o-eq-cus"/>
+                <constraint firstAttribute="bottom" secondItem="TcF-ol-YlC" secondAttribute="bottom" id="FKJ-2A-Gw0"/>
+                <constraint firstItem="TcF-ol-YlC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Sho-JI-8s1"/>
+                <constraint firstAttribute="trailing" secondItem="TcF-ol-YlC" secondAttribute="trailing" id="VHE-c0-pdn"/>
+                <constraint firstItem="TcF-ol-YlC" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="pPz-cL-jOY"/>
             </constraints>
             <size key="customSize" width="239" height="239"/>
             <connections>

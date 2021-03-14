@@ -13,12 +13,12 @@ extension MainViewController: UICollectionViewDataSource {
         switch collectionView {
             case collectionViewNames:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MenuCollViewCell",                                           for: indexPath) as! MenuCollViewCell
-                let tabsMenu = ["Stocks", "Favourite"]
-                cell.listLabel.text = tabsMenu[indexPath.row]
+                cell.setupCell(index: indexPath.item)
                 return cell
                 
             default:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StocksCollViewCell", for:                                                  indexPath) as! StocksCollViewCell
+                cell.setupCell(stocks: self.parsing.stocks)
                 return cell
         }
     }
