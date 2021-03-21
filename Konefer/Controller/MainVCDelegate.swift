@@ -24,4 +24,5 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDelegate
             self.collectionViewStocks.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         }
     }
+    
 }

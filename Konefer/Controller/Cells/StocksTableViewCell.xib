@@ -23,11 +23,11 @@
                             <constraint firstAttribute="width" constant="65" id="tqn-Jq-93p"/>
                         </constraints>
                     </imageView>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Ojj-pK-P76">
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Ojj-pK-P76">
                         <rect key="frame" x="334" y="30.5" width="90" height="44"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 764,6 Р" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89L-HZ-zIh">
-                                <rect key="frame" x="0.0" y="0.0" width="90" height="24"/>
+                                <rect key="frame" x="1.5" y="0.0" width="88.5" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -81,8 +81,10 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="nameCompany" destination="MRB-eJ-n9I" id="pdr-ld-15H"/>
-                <outlet property="ticker" destination="iU4-35-tyQ" id="HPr-Ek-Kr8"/>
+                <outlet property="regularMarketChange" destination="lnb-7o-5yX" id="qq1-a3-yiv"/>
+                <outlet property="regularMarketPrice" destination="89L-HZ-zIh" id="kRu-V9-ejy"/>
+                <outlet property="shortName" destination="MRB-eJ-n9I" id="pdr-ld-15H"/>
+                <outlet property="symbol" destination="iU4-35-tyQ" id="HPr-Ek-Kr8"/>
             </connections>
             <point key="canvasLocation" x="230.43478260869566" y="84.040178571428569"/>
         </tableViewCell>

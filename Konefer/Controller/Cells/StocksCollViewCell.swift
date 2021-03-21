@@ -13,7 +13,7 @@ class StocksCollViewCell: UICollectionViewCell {
     @IBOutlet weak var tableViewStocks: UITableView!
     
     // MARK: - Private Properties
-    private var stocks = [DataCompany]()
+    private var stocks = [StocksData]()
     
     // MARK: - Initializers
     override func awakeFromNib() {
@@ -27,7 +27,7 @@ class StocksCollViewCell: UICollectionViewCell {
         tableViewStocks.delegate = self
     }
     
-    func setupCell(stocks: [DataCompany]) {
+    func setupCell(stocks: [StocksData]) {
         self.stocks = stocks
         tableViewStocks.reloadData()
     }
@@ -41,7 +41,7 @@ extension StocksCollViewCell: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StocksTableViewCell", for: indexPath) as! StocksTableViewCell
-        cell.setupCell(ticker: self.stocks[indexPath.item].displaySymbol ?? "", nameCompany: self.stocks[indexPath.item].description ?? "")
+        cell.setupCell(currency: stocks[indexPath.item].currency ?? "", symbol: stocks[indexPath.item].symbol ?? "", shortName: stocks[indexPath.item].shortName ?? "", regularMarketPrice: stocks[indexPath.item].regularMarketPrice ?? 0, regularMarketChange: stocks[indexPath.item].regularMarketChange ?? 0, regularMarketChangePercent: stocks[indexPath.item].regularMarketChangePercent ?? 0)
         return cell
     }
     

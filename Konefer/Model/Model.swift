@@ -7,16 +7,20 @@
 
 import Foundation
 
-struct DataCompany: Decodable {
+struct StocksData: Codable {
+    
     var currency: String?
-    var description: String?
-    var displaySymbol: String?
+    var shortName: String?
+    var regularMarketChange: Double?
+    var regularMarketChangePercent: Double?
+    var regularMarketPrice: Double?
+    var symbol: String?
 }
 
-//struct DataCompany: Decodable {
-//    var displaySymbol: String?  // ticker
-//    var description: String?  //name
-//    var price: String?
-//    var priceChangePerDay: String?
-//    var favorites: Bool?
-//}
+struct QuoteResponse: Codable {
+    var result: [StocksData]
+}
+
+struct ResultsStocks: Codable {
+    var quoteResponse: QuoteResponse
+}

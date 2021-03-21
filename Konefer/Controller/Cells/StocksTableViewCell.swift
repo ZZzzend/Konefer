@@ -7,11 +7,14 @@
 
 import UIKit
 
+
 class StocksTableViewCell: UITableViewCell {
 
     // MARK: - IBOutlets
-    @IBOutlet weak var ticker: UILabel!
-    @IBOutlet weak var nameCompany: UILabel!
+    @IBOutlet weak var symbol: UILabel!
+    @IBOutlet weak var shortName: UILabel!
+    @IBOutlet weak var regularMarketPrice: UILabel!
+    @IBOutlet weak var regularMarketChange: UILabel!
     
     // MARK: - Lifecycle
     override func awakeFromNib() {
@@ -24,9 +27,31 @@ class StocksTableViewCell: UITableViewCell {
         
     }
     
-    func setupCell(ticker: String, nameCompany: String) {
-        self.ticker.text = ticker
-        self.nameCompany.text = nameCompany
+    func setupCell(currency: String, symbol: String, shortName: String, regularMarketPrice: Double, regularMarketChange: Double, regularMarketChangePercent: Double) {
+        
+        var value = ""
+        
+        switch currency {
+        case "USD":
+            value = "$"
+        case "RUB":
+            value = "₽"
+        case "EUR":
+            value = "€"
+        default:
+            value = "?"
+        }
+        
+        self.symbol.text = symbol
+        self.shortName.text = shortName
+        self.regularMarketPrice.text = value + String(format: "%.2f", regularMarketPrice)
+        self.regularMarketChange.text = value + String(format: "%.2f", abs(regularMarketChange)) + " " + "(\(String(format: "%.2f", abs(regularMarketChangePercent)))%)"
+        
+        if regularMarketChange < 0 {
+            self.regularMarketChange.textColor = .red
+            self.regularMarketChange.text = "-" + self.regularMarketChange.text!
+        }
+      //  self.nameCompany.text = nameCompany
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
