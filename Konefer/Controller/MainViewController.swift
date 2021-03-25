@@ -10,7 +10,6 @@ import UIKit
 class MainViewController: UIViewController {
     
     // MARK: - IBOutlets
-    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var collectionViewNames: UICollectionView!
     @IBOutlet weak var collectionViewStocks: UICollectionView!
     
@@ -21,21 +20,23 @@ class MainViewController: UIViewController {
     // MARK: - Initializers
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configSearchController()
         configcollectionViewNames()
         configCollectionViewStocks()
         
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationController?.navigationItem.largeTitleDisplayMode = .always
-        
-        let search = UISearchController(searchResultsController: nil)
-        search.searchResultsUpdater = self
-        self.navigationItem.searchController = search
-        
         parsing.parsing(reloadTableView: reloadcollectionViewStocks)
-        //collectionViewStocks.reloadData()
     }
     
     // MARK: - Private Methods
+    private func configSearchController() {
+        let search = UISearchController(searchResultsController: nil)
+        search.searchResultsUpdater = self
+        search.obscuresBackgroundDuringPresentation = false
+        search.searchBar.placeholder = "Search name or ticker"
+        self.navigationItem.searchController = search
+    }
+    
     private func configcollectionViewNames() {
         self.collectionViewNames.register(UINib(nibName: "MenuCollViewCell", bundle: nil), forCellWithReuseIdentifier: "MenuCollViewCell")
         self.collectionViewNames.dataSource = self
@@ -63,7 +64,13 @@ class MainViewController: UIViewController {
 
 extension MainViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        parsing.searchParsing(input: searchController.searchBar.text ?? "", reloadTableView: self.reloadcollectionViewStocks)
+        let input = searchController.searchBar.text!.uppercased().filter { "ABCDEFGHIJKLMNOPQRSTUVWXYZ".contains($0) }
+        if input.isEmpty {
+            parsing.searchStocks.removeAll()
+            parsing.parsing(reloadTableView: reloadcollectionViewStocks)
+        } else {
+            parsing.searchParsing(input: input , reloadTableView: self.reloadcollectionViewStocks)
+        }
     }
 }
 

@@ -17,10 +17,16 @@ class ParsingData {
     
     func parsing(reloadTableView: @escaping () -> ()) {
         
-        let symbols = tickers.joined(separator: "%2C")
+        let symbols: String
+        
+        if searchStocks.isEmpty {
+            symbols = tickers.joined(separator: "%2C")
+        } else {
+            symbols = searchStocks.map { $0.symbol ?? "" }.joined(separator: "%2C")
+        }
         
         let headers = [
-            "x-rapidapi-key": "37e9e36db3mshef1b09f4e690a87p19b99ajsn025825ba0cc5",
+            "x-rapidapi-key": "8c562fd4a7msh1f9894f0c1bfbaap15a16cjsn41dc38c86233",
             "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com"
         ]
 
@@ -37,8 +43,8 @@ class ParsingData {
             guard error == nil else { return }
             
             do {
-             //   let str = String(data: unwrappedData, encoding: .utf8)
-               // print("lol: \(str!)")
+              //  let str = String(data: unwrappedData, encoding: .utf8)
+              //  print("lol: \(str!)")
                 let model = try JSONDecoder().decode(ResultsStocks.self, from: unwrappedData)
                 self.stocks = model.quoteResponse.result
                 print(self.stocks)
@@ -61,16 +67,14 @@ class ParsingData {
         
         guard !input.isEmpty else { return }
         
-        let result = input.uppercased()
-        
         let headers = [
-            "x-rapidapi-key": "37e9e36db3mshef1b09f4e690a87p19b99ajsn025825ba0cc5",
+            "x-rapidapi-key": "8c562fd4a7msh1f9894f0c1bfbaap15a16cjsn41dc38c86233",
             "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com"
         ]
 
-        let request = NSMutableURLRequest(url: NSURL(string: "https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/auto-complete?query=\(result)&region=US")! as URL,
+        let request = NSMutableURLRequest(url: NSURL(string: "https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/auto-complete?query=\(input)&region=US")! as URL,
                                                 cachePolicy: .useProtocolCachePolicy,
-                                            timeoutInterval: 10.0)
+                                                timeoutInterval: 10.0)
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = headers
 
@@ -86,6 +90,7 @@ class ParsingData {
             //    print("lol: \(str!)")
                 let model = try JSONDecoder().decode(ResultSearch.self, from: unwrappedData)
                 self.searchStocks = model.ResultSet.Result
+                self.parsing(reloadTableView: reloadTableView)
              //   print(self.searchStocks)
                 
                 DispatchQueue.main.async {

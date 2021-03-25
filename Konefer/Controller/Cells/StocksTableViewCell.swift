@@ -44,8 +44,14 @@ class StocksTableViewCell: UITableViewCell {
         
         self.symbol.text = symbol
         self.shortName.text = shortName
-        self.regularMarketPrice.text = value + String(format: "%.2f", regularMarketPrice)
-        self.regularMarketChange.text = value + String(format: "%.2f", abs(regularMarketChange)) + " " + "(\(String(format: "%.2f", abs(regularMarketChangePercent)))%)"
+        
+        if regularMarketPrice == 0.00 {
+            self.regularMarketPrice.text = ""
+            self.regularMarketChange.text = ""
+        } else {
+            self.regularMarketPrice.text = value + String(format: "%.2f", regularMarketPrice)
+            self.regularMarketChange.text = value + String(format: "%.2f", abs(regularMarketChange)) + " " + "(\(String(format: "%.2f", abs(regularMarketChangePercent)))%)"
+        }
         
         if regularMarketChange < 0 {
             self.regularMarketChange.textColor = .red
@@ -53,14 +59,6 @@ class StocksTableViewCell: UITableViewCell {
         } else {
             self.regularMarketChange.textColor = .systemGreen
         }
-      //  self.nameCompany.text = nameCompany
-    }
-    
-    func setupSearchCell(symbol: String, name: String) {
-        self.symbol.text = symbol
-        self.shortName.text = name
-        self.regularMarketPrice.text = ""
-        self.regularMarketChange.text = ""
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

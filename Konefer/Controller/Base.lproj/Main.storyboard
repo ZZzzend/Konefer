@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Stocks-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Konefer" customModuleProvider="target" sceneMemberID="viewController">
@@ -42,7 +42,7 @@
                                 </cells>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="72A-dP-KDF">
-                                <rect key="frame" x="0.0" y="103" width="414" height="759"/>
+                                <rect key="frame" x="0.0" y="123" width="414" height="739"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="9Jq-5A-bpO">
                                     <size key="itemSize" width="417" height="672.5"/>
@@ -52,7 +52,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StocksCollViewCell" id="D6Y-WE-e8o">
-                                        <rect key="frame" x="0.0" y="43.5" width="417" height="672.5"/>
+                                        <rect key="frame" x="0.0" y="33.5" width="417" height="672.5"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="G8o-Z5-4rx">
                                             <rect key="frame" x="0.0" y="0.0" width="417" height="672.5"/>
@@ -67,7 +67,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="72A-dP-KDF" secondAttribute="trailing" id="4p2-bG-TA3"/>
-                            <constraint firstItem="72A-dP-KDF" firstAttribute="top" secondItem="5Oj-9D-bYl" secondAttribute="bottom" id="HlW-1f-S13"/>
+                            <constraint firstItem="72A-dP-KDF" firstAttribute="top" secondItem="5Oj-9D-bYl" secondAttribute="bottom" constant="20" id="HlW-1f-S13"/>
                             <constraint firstItem="5Oj-9D-bYl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="M1Z-pc-dwu"/>
                             <constraint firstItem="5Oj-9D-bYl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Tw6-CT-77U"/>
                             <constraint firstItem="72A-dP-KDF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Xey-d6-rHE"/>
@@ -75,7 +75,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="72A-dP-KDF" secondAttribute="bottom" id="iFX-sN-Sem"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Stocks" id="PSt-y2-du0"/>
+                    <navigationItem key="navigationItem" id="PSt-y2-du0"/>
                     <connections>
                         <outlet property="collectionViewNames" destination="5Oj-9D-bYl" id="lAG-Sp-dkq"/>
                         <outlet property="collectionViewStocks" destination="72A-dP-KDF" id="MOt-dl-tDU"/>
