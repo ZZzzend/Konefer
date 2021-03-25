@@ -14,6 +14,7 @@ class StocksCollViewCell: UICollectionViewCell {
     
     // MARK: - Private Properties
     private var stocks = [StocksData]()
+    private var searchStocks = [SearchData]()
     
     // MARK: - Initializers
     override func awakeFromNib() {
@@ -31,17 +32,31 @@ class StocksCollViewCell: UICollectionViewCell {
         self.stocks = stocks
         tableViewStocks.reloadData()
     }
+    
+    func setupCellSearch(stocks: [SearchData]) {
+        self.searchStocks = stocks
+        tableViewStocks.reloadData()
+    }
 
 }
 
 extension StocksCollViewCell: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return stocks.count
+        if searchStocks.isEmpty {
+            return stocks.count
+        } else {
+            return searchStocks.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StocksTableViewCell", for: indexPath) as! StocksTableViewCell
-        cell.setupCell(currency: stocks[indexPath.item].currency ?? "", symbol: stocks[indexPath.item].symbol ?? "", shortName: stocks[indexPath.item].shortName ?? "", regularMarketPrice: stocks[indexPath.item].regularMarketPrice ?? 0, regularMarketChange: stocks[indexPath.item].regularMarketChange ?? 0, regularMarketChangePercent: stocks[indexPath.item].regularMarketChangePercent ?? 0)
+        
+        if searchStocks.isEmpty {
+            cell.setupCell(currency: stocks[indexPath.item].currency ?? "", symbol: stocks[indexPath.item].symbol ?? "", shortName: stocks[indexPath.item].shortName ?? "", regularMarketPrice: stocks[indexPath.item].regularMarketPrice ?? 0, regularMarketChange: stocks[indexPath.item].regularMarketChange ?? 0, regularMarketChangePercent: stocks[indexPath.item].regularMarketChangePercent ?? 0)
+        } else {
+            cell.setupSearchCell(symbol: searchStocks[indexPath.row].symbol ?? "", name: searchStocks[indexPath.row].name ?? "")
+        }
         return cell
     }
     

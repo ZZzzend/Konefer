@@ -16,15 +16,23 @@ class MainViewController: UIViewController {
     
     // MARK: - Private Properties
     var parsing = ParsingData()
+    lazy var reloadcollectionViewStocks = { self.collectionViewStocks.reloadData() }
     
     // MARK: - Initializers
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configcollectionViewNames()
         configCollectionViewStocks()
-        parsing.parsing()
-        collectionViewStocks.reloadData()
+        
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationItem.largeTitleDisplayMode = .always
+        
+        let search = UISearchController(searchResultsController: nil)
+        search.searchResultsUpdater = self
+        self.navigationItem.searchController = search
+        
+        parsing.parsing(reloadTableView: reloadcollectionViewStocks)
+        //collectionViewStocks.reloadData()
     }
     
     // MARK: - Private Methods
@@ -50,6 +58,12 @@ class MainViewController: UIViewController {
                 self.collectionViewNames.reloadData()
             }
         }
+    }
+}
+
+extension MainViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        parsing.searchParsing(input: searchController.searchBar.text ?? "", reloadTableView: self.reloadcollectionViewStocks)
     }
 }
 

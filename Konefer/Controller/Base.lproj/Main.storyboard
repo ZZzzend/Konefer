@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vIu-yL-Z2L">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--Stocks-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Konefer" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5Oj-9D-bYl">
-                                <rect key="frame" x="10" y="120" width="394" height="15"/>
+                                <rect key="frame" x="10" y="88" width="394" height="15"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="s4m-J5-ryM"/>
@@ -41,12 +41,8 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <searchBar contentMode="redraw" text="" placeholder="Find company or ticker" scopeBarBackgroundImage="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="45Q-zg-Hfq">
-                                <rect key="frame" x="10" y="44" width="394" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="72A-dP-KDF">
-                                <rect key="frame" x="0.0" y="155" width="414" height="707"/>
+                                <rect key="frame" x="0.0" y="103" width="414" height="759"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="9Jq-5A-bpO">
                                     <size key="itemSize" width="417" height="672.5"/>
@@ -56,7 +52,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StocksCollViewCell" id="D6Y-WE-e8o">
-                                        <rect key="frame" x="0.0" y="17.5" width="417" height="672.5"/>
+                                        <rect key="frame" x="0.0" y="43.5" width="417" height="672.5"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="G8o-Z5-4rx">
                                             <rect key="frame" x="0.0" y="0.0" width="417" height="672.5"/>
@@ -71,30 +67,44 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="72A-dP-KDF" secondAttribute="trailing" id="4p2-bG-TA3"/>
-                            <constraint firstItem="45Q-zg-Hfq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="EaD-vE-saE"/>
-                            <constraint firstItem="72A-dP-KDF" firstAttribute="top" secondItem="5Oj-9D-bYl" secondAttribute="bottom" constant="20" id="HlW-1f-S13"/>
+                            <constraint firstItem="72A-dP-KDF" firstAttribute="top" secondItem="5Oj-9D-bYl" secondAttribute="bottom" id="HlW-1f-S13"/>
                             <constraint firstItem="5Oj-9D-bYl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="M1Z-pc-dwu"/>
-                            <constraint firstItem="45Q-zg-Hfq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="QaA-mU-1IN"/>
-                            <constraint firstItem="5Oj-9D-bYl" firstAttribute="top" secondItem="45Q-zg-Hfq" secondAttribute="bottom" constant="20" id="UN1-d1-fHp"/>
+                            <constraint firstItem="5Oj-9D-bYl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Tw6-CT-77U"/>
                             <constraint firstItem="72A-dP-KDF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Xey-d6-rHE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5Oj-9D-bYl" secondAttribute="trailing" constant="10" id="iDS-7q-2IE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="72A-dP-KDF" secondAttribute="bottom" id="iFX-sN-Sem"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="45Q-zg-Hfq" secondAttribute="trailing" constant="10" id="tFO-eZ-2Vv"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Stocks" id="PSt-y2-du0"/>
                     <connections>
                         <outlet property="collectionViewNames" destination="5Oj-9D-bYl" id="lAG-Sp-dkq"/>
                         <outlet property="collectionViewStocks" destination="72A-dP-KDF" id="MOt-dl-tDU"/>
-                        <outlet property="searchBar" destination="45Q-zg-Hfq" id="TdK-hq-erT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="957.97101449275374" y="71.651785714285708"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="HIg-6l-oAB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vIu-yL-Z2L" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="n9b-O0-Dyh">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="zFe-3G-odC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dUO-3e-ihK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="47.826086956521742" y="71.651785714285708"/>
         </scene>
     </scenes>
     <resources>
-        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

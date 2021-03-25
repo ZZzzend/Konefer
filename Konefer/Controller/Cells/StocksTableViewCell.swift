@@ -50,8 +50,17 @@ class StocksTableViewCell: UITableViewCell {
         if regularMarketChange < 0 {
             self.regularMarketChange.textColor = .red
             self.regularMarketChange.text = "-" + self.regularMarketChange.text!
+        } else {
+            self.regularMarketChange.textColor = .systemGreen
         }
       //  self.nameCompany.text = nameCompany
+    }
+    
+    func setupSearchCell(symbol: String, name: String) {
+        self.symbol.text = symbol
+        self.shortName.text = name
+        self.regularMarketPrice.text = ""
+        self.regularMarketChange.text = ""
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

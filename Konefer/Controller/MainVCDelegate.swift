@@ -20,7 +20,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == collectionViewNames {
-          //  self.groupsCollectionView.reloadData()
+       //     self.collectionViewStocks.reloadData()
             self.collectionViewStocks.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         }
     }
