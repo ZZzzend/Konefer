@@ -9,13 +9,13 @@ import RealmSwift
 
 class ActionsWithRealmObjects {
     
-    func saveObjects(stocks: [StocksData], reload: @escaping () -> ()) {
+    func saveObjects(stocks: [StocksData], remove: (), reload: @escaping () -> ()) {
         
         
         _ = stocks.map {
             let stocksData = realm.object(ofType: StocksDataRealm.self, forPrimaryKey: $0.symbol)
             
-            let newStock = StocksDataRealm(currency: $0.currency!, name: $0.shortName!, regularMarketPrice: $0.regularMarketPrice!, regularMarketChange: $0.regularMarketChange!, regularMarketChangePercent: $0.regularMarketChangePercent!, symbol: $0.symbol!)
+            let newStock = StocksDataRealm(currency: $0.currency!, name: $0.shortName!, regularMarketPrice: $0.regularMarketPrice!, regularMarketChange: $0.regularMarketChange!, regularMarketChangePercent: $0.regularMarketChangePercent!, symbol: $0.symbol!, isFavorite: false)
             
             if let stock = stocksData  {
                 try! realm.write {
@@ -30,6 +30,7 @@ class ActionsWithRealmObjects {
             }
         }
         
-            reload()
+        remove
+        reload()
     }
 }

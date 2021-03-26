@@ -69,10 +69,27 @@ extension MainViewController: UISearchResultsUpdating {
         let input = searchController.searchBar.text!.uppercased().filter { "ABCDEFGHIJKLMNOPQRSTUVWXYZ".contains($0) }
         if input.isEmpty {
             parsing.searchStocks.removeAll()
-            parsing.parsing(reloadTableView: reloadcollectionViewStocks)
+            parsing.stocks.removeAll()
+            self.collectionViewStocks.reloadData()
+          //  parsing.parsing(reloadTableView: reloadcollectionViewStocks)
         } else {
             parsing.searchParsing(input: input , reloadTableView: self.reloadcollectionViewStocks)
         }
+    }
+}
+
+extension MainViewController {
+    func fullScreenHandler(_ currency: String, shortName: String, _ regularMarketChange: Double, _ regularMarketChangePercent: Double, _ regularMarketPrice: Double, _ symbol: String, _ isFavorite: Bool) {
+      //  if let indexPath = self.collectionViewStocks.indexPath(for: cell) {
+          //  let stocks = self.group.groups![indexPath.item].products!
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "DetailViewController") as! DetailViewController
+        vc.settings(currency: currency, name: shortName, regularMarketChange: regularMarketChange, regularMarketChangePercent: regularMarketChangePercent, regularMarketPrice: regularMarketPrice, symbol: symbol, isFavorite: isFavorite)
+        //    vc.products = products
+        //    vc.indexPath = IndexPath(row: indexProduct, section: 0)
+            self.navigationController?.pushViewController(vc, animated: true)
+       // }
+       // print("fullScreenHandler")
     }
 }
 

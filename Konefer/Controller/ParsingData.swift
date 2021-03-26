@@ -24,6 +24,7 @@ class ParsingData {
         
         if search == "" {
             symbols = tickers.joined(separator: "%2C")
+            searchStocks.removeAll()
         } else {
             symbols = search
         }
@@ -56,7 +57,7 @@ class ParsingData {
                 
                 DispatchQueue.main.async {
                     if search == "" {
-                        self.saveObjects.saveObjects(stocks: self.stocks, reload: reloadTableView)
+                        self.saveObjects.saveObjects(stocks: self.stocks, remove: self.stocks.removeAll(), reload: reloadTableView)
                     } else {
                         reloadTableView()
                     }
@@ -104,9 +105,9 @@ class ParsingData {
                 self.parsing(reloadTableView: reloadTableView)
              //   print(self.searchStocks)
                 
-                DispatchQueue.main.async {
-                    reloadTableView()
-                }
+            //    DispatchQueue.main.async {
+            //        reloadTableView()
+            //    }
                 
             } catch {
                 print("json error: \(error)")

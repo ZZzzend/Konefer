@@ -17,10 +17,13 @@ class StocksCollViewCell: UICollectionViewCell {
     private var stocks = [StocksData]()
     var stocksRealm: Results<StocksDataRealm>!
     
+    // MARK: - Public Properties
+    var fullScreenHandler: ((_ currency: String, _ shortName: String, _ regularMarketChange: Double, _ regularMarketChangePercent: Double, _ regularMarketPrice: Double, _ symbol: String, _ isFavorite: Bool) -> Void)?
+    
     // MARK: - Initializers
     override func awakeFromNib() {
         super.awakeFromNib()
-        stocksRealm = realm.objects(StocksDataRealm.self)
+        
         configTableViewStocks()
     }
     
@@ -30,26 +33,41 @@ class StocksCollViewCell: UICollectionViewCell {
         tableViewStocks.delegate = self
     }
     
-    func setupCell(stocks: [StocksData]) {
+    func setupCell(stocks: [StocksData], isFavorite: Bool) {
         self.stocks = stocks
+        if isFavorite {
+            stocksRealm = realm.objects(StocksDataRealm.self).filter("isFavorite == true")
+        } else {
+            stocksRealm = realm.objects(StocksDataRealm.self)
+        }
         tableViewStocks.reloadData()
     }
-
+    
 }
 
 extension StocksCollViewCell: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return stocksRealm.count
-           // return stocks.count
+        
+        if !stocks.isEmpty {
+            return stocks.count
+        } else {
+            return stocksRealm.count
+        }
+        // return stocks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StocksTableViewCell", for: indexPath) as! StocksTableViewCell
         
-//            cell.setupCell(currency: stocks[indexPath.item].currency ?? "", symbol: stocks[indexPath.item].symbol ?? "", shortName: stocks[indexPath.item].shortName ?? "", regularMarketPrice: stocks[indexPath.item].regularMarketPrice ?? 0, regularMarketChange: stocks[indexPath.item].regularMarketChange ?? 0, regularMarketChangePercent: stocks[indexPath.item].regularMarketChangePercent ?? 0)
-        let stocks = stocksRealm[indexPath.row]
-        
-        cell.setupCell(currency: stocks.currency, symbol: stocks.symbol, shortName: stocks.name, regularMarketPrice: stocks.regularMarketPrice, regularMarketChange: stocks.regularMarketChange, regularMarketChangePercent: stocks.regularMarketChangePercent)
+        if !stocks.isEmpty {
+            
+            cell.setupCell(currency: stocks[indexPath.item].currency ?? "", symbol: stocks[indexPath.item].symbol ?? "", shortName: stocks[indexPath.item].shortName ?? "", regularMarketPrice: stocks[indexPath.item].regularMarketPrice ?? 0, regularMarketChange: stocks[indexPath.item].regularMarketChange ?? 0, regularMarketChangePercent: stocks[indexPath.item].regularMarketChangePercent ?? 0)
+        } else {
+            
+            let stocks = stocksRealm[indexPath.row]
+            
+            cell.setupCell(currency: stocks.currency, symbol: stocks.symbol, shortName: stocks.name, regularMarketPrice: stocks.regularMarketPrice, regularMarketChange: stocks.regularMarketChange, regularMarketChangePercent: stocks.regularMarketChangePercent)
+        }
         return cell
     }
     
@@ -59,4 +77,17 @@ extension StocksCollViewCell: UITableViewDataSource {
     
 }
 
-extension StocksCollViewCell: UITableViewDelegate { }
+extension StocksCollViewCell: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tableViewStocks.deselectRow(at: indexPath, animated: true)
+        
+        
+        if stocks.isEmpty {
+            let stocks = stocksRealm[indexPath.row]
+            fullScreenHandler!(stocks.currency, stocks.name, stocks.regularMarketChange, stocks.regularMarketChangePercent, stocks.regularMarketPrice, stocks.symbol, stocks.isFavorite)
+        } else {
+            fullScreenHandler!(self.stocks[indexPath.row].currency ?? "", self.stocks[indexPath.row].shortName ?? "", self.stocks[indexPath.row].regularMarketChange ?? 0.0, self.stocks[indexPath.row].regularMarketChangePercent ?? 0.0, self.stocks[indexPath.row].regularMarketPrice ?? 0.0, self.stocks[indexPath.row].symbol ?? "", false)
+        }
+    }
+}

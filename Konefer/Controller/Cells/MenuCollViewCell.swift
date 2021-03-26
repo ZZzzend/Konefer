@@ -14,7 +14,7 @@ class MenuCollViewCell: UICollectionViewCell {
     
     // MARK: - Private Properties
     private let tabsMenu = ["Stocks", "Favourite"]
-
+    
     // MARK: - Initializers
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,11 +23,11 @@ class MenuCollViewCell: UICollectionViewCell {
     
     func setupCell(index: Int) {
         listLabel.text = tabsMenu[index]
-//        if isSelected {
-//            listLabel.textColor = .blue
-//        } else {
-//            listLabel.textColor = .black
-//        }
+        //        if isSelected {
+        //            listLabel.textColor = .blue
+        //        } else {
+        //            listLabel.textColor = .black
+        //        }
     }
     
 }

@@ -85,6 +85,31 @@
             </objects>
             <point key="canvasLocation" x="957.97101449275374" y="71.651785714285708"/>
         </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="aHl-hd-RD1">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" id="8lh-Q0-fIk" customClass="DetailViewController" customModule="Konefer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="U4E-XL-jlO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="SSz-At-89w"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dPg-Bf-P2Z">
+                        <barButtonItem key="rightBarButtonItem" image="star" catalog="system" id="ekL-nk-8dr">
+                            <connections>
+                                <action selector="isFavoriteAction:" destination="8lh-Q0-fIk" id="rzz-jD-dvH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="favoriteButton" destination="ekL-nk-8dr" id="Wyf-w7-JRj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aib-0C-QfU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2871.0144927536235" y="71.651785714285708"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="HIg-6l-oAB">
             <objects>
@@ -103,8 +128,27 @@
             </objects>
             <point key="canvasLocation" x="47.826086956521742" y="71.651785714285708"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hQz-7f-iRA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ubj-mV-nIG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hif-rq-No0">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8lh-Q0-fIk" kind="relationship" relationship="rootViewController" id="AOI-FO-Ejb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b5h-XY-pZA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1960.8695652173915" y="71.651785714285708"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

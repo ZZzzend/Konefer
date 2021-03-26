@@ -9,7 +9,7 @@ import UIKit
 
 
 class StocksTableViewCell: UITableViewCell {
-
+    
     // MARK: - IBOutlets
     @IBOutlet weak var symbol: UILabel!
     @IBOutlet weak var shortName: UILabel!
@@ -51,20 +51,20 @@ class StocksTableViewCell: UITableViewCell {
         } else {
             self.regularMarketPrice.text = value + String(format: "%.2f", regularMarketPrice)
             self.regularMarketChange.text = value + String(format: "%.2f", abs(regularMarketChange)) + " " + "(\(String(format: "%.2f", abs(regularMarketChangePercent)))%)"
-        }
-        
-        if regularMarketChange < 0 {
-            self.regularMarketChange.textColor = .red
-            self.regularMarketChange.text = "-" + self.regularMarketChange.text!
-        } else {
-            self.regularMarketChange.textColor = .systemGreen
-            self.regularMarketChange.text = "+" + self.regularMarketChange.text!
+            
+            if regularMarketChange < 0 {
+                self.regularMarketChange.textColor = .red
+                self.regularMarketChange.text = "-" + self.regularMarketChange.text!
+            } else {
+                self.regularMarketChange.textColor = .systemGreen
+                self.regularMarketChange.text = "+" + self.regularMarketChange.text!
+            }
         }
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
