@@ -14,8 +14,10 @@ class MainViewController: UIViewController {
     @IBOutlet weak var collectionViewStocks: UICollectionView!
     
     // MARK: - Private Properties
-    var parsing = ParsingData()
-    lazy var reloadcollectionViewStocks = { self.collectionViewStocks.reloadData() }
+    private lazy var reloadcollectionViewStocks = { self.collectionViewStocks.reloadData() }
+    
+    // MARK: - Public Properties
+    public var parsing = ParsingData()
     
     // MARK: - Initializers
     override func viewDidLoad() {

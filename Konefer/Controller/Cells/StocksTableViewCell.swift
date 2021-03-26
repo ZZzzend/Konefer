@@ -58,6 +58,7 @@ class StocksTableViewCell: UITableViewCell {
             self.regularMarketChange.text = "-" + self.regularMarketChange.text!
         } else {
             self.regularMarketChange.textColor = .systemGreen
+            self.regularMarketChange.text = "+" + self.regularMarketChange.text!
         }
     }
 

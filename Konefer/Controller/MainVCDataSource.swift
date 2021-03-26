@@ -19,14 +19,9 @@ extension MainViewController: UICollectionViewDataSource {
             default:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StocksCollViewCell", for:                                                  indexPath) as! StocksCollViewCell
                 
-                
-             //   if !parsing.searchStocks.isEmpty {
-             //       cell.setupCellSearch(stocks: self.parsing.searchStocks)
-             //   } else {
-              //      if indexPath.row == 0 {
+                    if indexPath.row == 0 {
                         cell.setupCell(stocks: self.parsing.stocks)
-                //    }
-                //}
+                    }
                 return cell
         }
     }

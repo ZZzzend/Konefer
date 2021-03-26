@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class StocksCollViewCell: UICollectionViewCell {
     
@@ -14,10 +15,12 @@ class StocksCollViewCell: UICollectionViewCell {
     
     // MARK: - Private Properties
     private var stocks = [StocksData]()
+    var stocksRealm: Results<StocksDataRealm>!
     
     // MARK: - Initializers
     override func awakeFromNib() {
         super.awakeFromNib()
+        stocksRealm = realm.objects(StocksDataRealm.self)
         configTableViewStocks()
     }
     
@@ -36,13 +39,17 @@ class StocksCollViewCell: UICollectionViewCell {
 
 extension StocksCollViewCell: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return stocks.count
+        return stocksRealm.count
+           // return stocks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StocksTableViewCell", for: indexPath) as! StocksTableViewCell
         
-            cell.setupCell(currency: stocks[indexPath.item].currency ?? "", symbol: stocks[indexPath.item].symbol ?? "", shortName: stocks[indexPath.item].shortName ?? "", regularMarketPrice: stocks[indexPath.item].regularMarketPrice ?? 0, regularMarketChange: stocks[indexPath.item].regularMarketChange ?? 0, regularMarketChangePercent: stocks[indexPath.item].regularMarketChangePercent ?? 0)
+//            cell.setupCell(currency: stocks[indexPath.item].currency ?? "", symbol: stocks[indexPath.item].symbol ?? "", shortName: stocks[indexPath.item].shortName ?? "", regularMarketPrice: stocks[indexPath.item].regularMarketPrice ?? 0, regularMarketChange: stocks[indexPath.item].regularMarketChange ?? 0, regularMarketChangePercent: stocks[indexPath.item].regularMarketChangePercent ?? 0)
+        let stocks = stocksRealm[indexPath.row]
+        
+        cell.setupCell(currency: stocks.currency, symbol: stocks.symbol, shortName: stocks.name, regularMarketPrice: stocks.regularMarketPrice, regularMarketChange: stocks.regularMarketChange, regularMarketChangePercent: stocks.regularMarketChangePercent)
         return cell
     }
     

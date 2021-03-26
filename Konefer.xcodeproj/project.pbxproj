@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A8D24FBFC70FD2E6DDA73E0 /* Pods_Konefer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FC8B6DC53FC71EF77675FF1 /* Pods_Konefer.framework */; };
 		8669026225DF8E8B00CFA6DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8669026125DF8E8B00CFA6DB /* AppDelegate.swift */; };
 		8669026425DF8E8B00CFA6DB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8669026325DF8E8B00CFA6DB /* SceneDelegate.swift */; };
 		8669026625DF8E8B00CFA6DB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8669026525DF8E8B00CFA6DB /* MainViewController.swift */; };
@@ -15,6 +16,9 @@
 		8669026E25DF8E8C00CFA6DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8669026C25DF8E8C00CFA6DB /* LaunchScreen.storyboard */; };
 		8669027825DF978B00CFA6DB /* MenuCollViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8669027625DF978B00CFA6DB /* MenuCollViewCell.swift */; };
 		8669027925DF978B00CFA6DB /* MenuCollViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8669027725DF978B00CFA6DB /* MenuCollViewCell.xib */; };
+		86705D4E260D742C004BAAA7 /* StocksDataRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86705D4D260D742C004BAAA7 /* StocksDataRealm.swift */; };
+		86705D52260D77B3004BAAA7 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86705D51260D77B3004BAAA7 /* StorageManager.swift */; };
+		86705D55260D79E1004BAAA7 /* ActionsWithRealmObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86705D54260D79E1004BAAA7 /* ActionsWithRealmObjects.swift */; };
 		8679761C25F0E7A400B84A97 /* StocksData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8679761B25F0E7A400B84A97 /* StocksData.swift */; };
 		8679761F25F0EF3D00B84A97 /* ParsingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8679761E25F0EF3D00B84A97 /* ParsingData.swift */; };
 		867A3DE025EA0262007C619E /* StocksCollViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867A3DDE25EA0262007C619E /* StocksCollViewCell.swift */; };
@@ -27,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3FC8B6DC53FC71EF77675FF1 /* Pods_Konefer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Konefer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		47D334CC05EC468DD83EF2E1 /* Pods-Konefer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Konefer.release.xcconfig"; path = "Target Support Files/Pods-Konefer/Pods-Konefer.release.xcconfig"; sourceTree = "<group>"; };
 		8669025E25DF8E8B00CFA6DB /* Konefer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Konefer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8669026125DF8E8B00CFA6DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8669026325DF8E8B00CFA6DB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +43,9 @@
 		8669026F25DF8E8C00CFA6DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8669027625DF978B00CFA6DB /* MenuCollViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollViewCell.swift; sourceTree = "<group>"; };
 		8669027725DF978B00CFA6DB /* MenuCollViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCollViewCell.xib; sourceTree = "<group>"; };
+		86705D4D260D742C004BAAA7 /* StocksDataRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksDataRealm.swift; sourceTree = "<group>"; };
+		86705D51260D77B3004BAAA7 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		86705D54260D79E1004BAAA7 /* ActionsWithRealmObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsWithRealmObjects.swift; sourceTree = "<group>"; };
 		8679761B25F0E7A400B84A97 /* StocksData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksData.swift; sourceTree = "<group>"; };
 		8679761E25F0EF3D00B84A97 /* ParsingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsingData.swift; sourceTree = "<group>"; };
 		867A3DDE25EA0262007C619E /* StocksCollViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksCollViewCell.swift; sourceTree = "<group>"; };
@@ -46,6 +55,7 @@
 		86E49E6325EA06DC0037B115 /* MainVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVCDelegate.swift; sourceTree = "<group>"; };
 		86E49E6625EA0A390037B115 /* StocksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksTableViewCell.swift; sourceTree = "<group>"; };
 		86E49E6725EA0A390037B115 /* StocksTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StocksTableViewCell.xib; sourceTree = "<group>"; };
+		8A9A218039CC7184105E50AB /* Pods-Konefer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Konefer.debug.xcconfig"; path = "Target Support Files/Pods-Konefer/Pods-Konefer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,17 +63,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A8D24FBFC70FD2E6DDA73E0 /* Pods_Konefer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7DF77D3A34A504E67C250643 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8A9A218039CC7184105E50AB /* Pods-Konefer.debug.xcconfig */,
+				47D334CC05EC468DD83EF2E1 /* Pods-Konefer.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		865F02AE25FC759E00F0FE77 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				8679761B25F0E7A400B84A97 /* StocksData.swift */,
 				867B5354260B49B80052D34B /* SearchData.swift */,
+				86705D4D260D742C004BAAA7 /* StocksDataRealm.swift */,
+				86705D51260D77B3004BAAA7 /* StorageManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -73,6 +95,8 @@
 			children = (
 				8669026025DF8E8B00CFA6DB /* Konefer */,
 				8669025F25DF8E8B00CFA6DB /* Products */,
+				7DF77D3A34A504E67C250643 /* Pods */,
+				8D0F894C5948DF0E47BD4A33 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,6 +128,7 @@
 				867A3DE625EA0521007C619E /* Cells */,
 				8669026525DF8E8B00CFA6DB /* MainViewController.swift */,
 				8679761E25F0EF3D00B84A97 /* ParsingData.swift */,
+				86705D54260D79E1004BAAA7 /* ActionsWithRealmObjects.swift */,
 				867A3DE725EA0566007C619E /* MainVCDataSource.swift */,
 				86E49E6325EA06DC0037B115 /* MainVCDelegate.swift */,
 				8669026725DF8E8B00CFA6DB /* Main.storyboard */,
@@ -124,6 +149,14 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		8D0F894C5948DF0E47BD4A33 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3FC8B6DC53FC71EF77675FF1 /* Pods_Konefer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -131,9 +164,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8669027225DF8E8C00CFA6DB /* Build configuration list for PBXNativeTarget "Konefer" */;
 			buildPhases = (
+				E09F46EE81DAA8486B190724 /* [CP] Check Pods Manifest.lock */,
 				8669025A25DF8E8B00CFA6DB /* Sources */,
 				8669025B25DF8E8B00CFA6DB /* Frameworks */,
 				8669025C25DF8E8B00CFA6DB /* Resources */,
+				E84022B0E2F7E401E792A654 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -192,6 +227,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E09F46EE81DAA8486B190724 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Konefer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E84022B0E2F7E401E792A654 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Konefer/Pods-Konefer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Konefer/Pods-Konefer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Konefer/Pods-Konefer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8669025A25DF8E8B00CFA6DB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -207,7 +284,10 @@
 				86E49E6425EA06DC0037B115 /* MainVCDelegate.swift in Sources */,
 				8669026625DF8E8B00CFA6DB /* MainViewController.swift in Sources */,
 				8669026225DF8E8B00CFA6DB /* AppDelegate.swift in Sources */,
+				86705D55260D79E1004BAAA7 /* ActionsWithRealmObjects.swift in Sources */,
+				86705D4E260D742C004BAAA7 /* StocksDataRealm.swift in Sources */,
 				8669026425DF8E8B00CFA6DB /* SceneDelegate.swift in Sources */,
+				86705D52260D77B3004BAAA7 /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +431,7 @@
 		};
 		8669027325DF8E8C00CFA6DB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A9A218039CC7184105E50AB /* Pods-Konefer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -369,6 +450,7 @@
 		};
 		8669027425DF8E8C00CFA6DB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47D334CC05EC468DD83EF2E1 /* Pods-Konefer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
