@@ -13,7 +13,7 @@ class MenuCollViewCell: UICollectionViewCell {
     @IBOutlet weak var listLabel: UILabel!
     
     // MARK: - Private Properties
-    private let tabsMenu = ["Stocks", "Favourite"]
+    private let tabsMenu = ["Stocks", "Favorite"]
     
     // MARK: - Initializers
     override func awakeFromNib() {
@@ -21,13 +21,14 @@ class MenuCollViewCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func setupCell(index: Int) {
+    func setupCell(index: Int, isSelected: Bool) {
         listLabel.text = tabsMenu[index]
-        //        if isSelected {
-        //            listLabel.textColor = .blue
-        //        } else {
-        //            listLabel.textColor = .black
-        //        }
+        
+        if isSelected {
+            listLabel.font = UIFont.boldSystemFont(ofSize: 28)
+        } else {
+            listLabel.font = UIFont.systemFont(ofSize: 18)
+        }
     }
     
 }

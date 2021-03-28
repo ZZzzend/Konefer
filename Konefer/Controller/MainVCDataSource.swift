@@ -8,12 +8,18 @@
 import UIKit
 
 extension MainViewController: UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         switch collectionView {
         case collectionViewNames:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MenuCollViewCell",                                           for: indexPath) as! MenuCollViewCell
-            cell.setupCell(index: indexPath.item)
+            if self.selected == indexPath.item {
+                cell.setupCell(index: indexPath.item, isSelected: true)
+            } else {
+                cell.setupCell(index: indexPath.item, isSelected: false)
+            }
+            
             return cell
             
         default:

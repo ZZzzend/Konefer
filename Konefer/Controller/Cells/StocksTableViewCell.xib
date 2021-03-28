@@ -17,10 +17,11 @@
                 <rect key="frame" x="0.0" y="0.0" width="444" height="105"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="questionmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QbT-xH-tVB">
-                        <rect key="frame" x="15" y="15.5" width="65" height="74"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="questionmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QbT-xH-tVB">
+                        <rect key="frame" x="15" y="15.5" width="75" height="74"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="65" id="tqn-Jq-93p"/>
+                            <constraint firstAttribute="height" constant="75" id="5e0-Ra-63E"/>
+                            <constraint firstAttribute="width" constant="75" id="tqn-Jq-93p"/>
                         </constraints>
                     </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Ojj-pK-P76">
@@ -41,7 +42,7 @@
                         </subviews>
                     </stackView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="f1v-1Z-sVo">
-                        <rect key="frame" x="95" y="32" width="81" height="41.5"/>
+                        <rect key="frame" x="105" y="32" width="81" height="41.5"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="zoQ-B6-Kt3">
                                 <rect key="frame" x="0.0" y="0.0" width="81" height="24"/>
@@ -77,6 +78,7 @@
                     <constraint firstItem="QbT-xH-tVB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="ItE-S9-ZLP"/>
                     <constraint firstItem="Ojj-pK-P76" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="KoJ-tM-r7n"/>
                     <constraint firstItem="QbT-xH-tVB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="OKI-Sr-zyq"/>
+                    <constraint firstItem="Ojj-pK-P76" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="f1v-1Z-sVo" secondAttribute="trailing" constant="20" id="Ryh-gi-dWa"/>
                     <constraint firstItem="f1v-1Z-sVo" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="iIr-sR-w8w"/>
                     <constraint firstAttribute="trailing" secondItem="Ojj-pK-P76" secondAttribute="trailing" constant="20" symbolic="YES" id="n4m-X7-ioH"/>
                     <constraint firstItem="f1v-1Z-sVo" firstAttribute="leading" secondItem="QbT-xH-tVB" secondAttribute="trailing" constant="15" id="pjc-9P-QbX"/>
@@ -84,6 +86,8 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="favorite" destination="S8Y-ZZ-vmc" id="Dhc-xL-4In"/>
+                <outlet property="logo" destination="QbT-xH-tVB" id="9FN-XW-NAf"/>
                 <outlet property="regularMarketChange" destination="lnb-7o-5yX" id="qq1-a3-yiv"/>
                 <outlet property="regularMarketPrice" destination="89L-HZ-zIh" id="kRu-V9-ejy"/>
                 <outlet property="shortName" destination="MRB-eJ-n9I" id="pdr-ld-15H"/>

@@ -11,14 +11,18 @@ import UIKit
 class StocksTableViewCell: UITableViewCell {
     
     // MARK: - IBOutlets
+    @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var symbol: UILabel!
     @IBOutlet weak var shortName: UILabel!
     @IBOutlet weak var regularMarketPrice: UILabel!
     @IBOutlet weak var regularMarketChange: UILabel!
+    @IBOutlet weak var favorite: UIImageView!
     
     // MARK: - Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
+        logo.layer.masksToBounds = true
+        logo.layer.cornerRadius = logo.frame.size.width / 5
         // Initialization code
     }
     
@@ -27,7 +31,13 @@ class StocksTableViewCell: UITableViewCell {
         
     }
     
-    func setupCell(currency: String, symbol: String, shortName: String, regularMarketPrice: Double, regularMarketChange: Double, regularMarketChangePercent: Double) {
+    func setupCell(currency: String, symbol: String, shortName: String, regularMarketPrice: Double, regularMarketChange: Double, regularMarketChangePercent: Double, isFavorite: Bool, favoriteIsHidden: Bool) {
+        
+        if let logo = UIImage(named: "\(symbol)") {
+            self.logo.image = logo
+        } else {
+            self.logo.image = UIImage(systemName: "questionmark.circle.fill")
+        }
         
         var value = ""
         
@@ -60,6 +70,15 @@ class StocksTableViewCell: UITableViewCell {
                 self.regularMarketChange.text = "+" + self.regularMarketChange.text!
             }
         }
+        
+        if isFavorite {
+            self.favorite.image = UIImage(systemName: "star.fill")
+        } else {
+            self.favorite.image = UIImage(systemName: "star")
+        }
+        
+        self.favorite.isHidden = favoriteIsHidden
+        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
