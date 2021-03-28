@@ -94,26 +94,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YNDX" translatesAutoresizingMaskIntoConstraints="NO" id="uDW-fI-ClF">
-                                <rect key="frame" x="117" y="125" width="180" height="180"/>
+                                <rect key="frame" x="117" y="81" width="180" height="180"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="u43-Jo-Ikf"/>
                                     <constraint firstAttribute="width" constant="180" id="v0g-vN-bs6"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YNDX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfe-kN-6XT">
-                                <rect key="frame" x="154.5" y="337" width="105" height="46"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YNDX" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfe-kN-6XT">
+                                <rect key="frame" x="154.5" y="293" width="105" height="45.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="200" id="wlX-RE-yuM"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="38"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yandex inc." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="26K-mi-wz9">
-                                <rect key="frame" x="120" y="384" width="174" height="46"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yandex inc." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="26K-mi-wz9">
+                                <rect key="frame" x="120" y="339.5" width="174" height="45.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="250" id="P5l-zt-cm9"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="38"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Qp-KT-82t">
-                                <rect key="frame" x="117" y="461" width="180" height="54"/>
+                                <rect key="frame" x="117" y="416" width="180" height="54"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="MAW-qu-ohE"/>
@@ -122,6 +128,9 @@
                                 <state key="normal" title="To Favorites">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="favoriteActionStock:" destination="8lh-Q0-fIk" eventType="touchUpInside" id="VjN-bg-IoK"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SSz-At-89w"/>
@@ -137,20 +146,17 @@
                             <constraint firstItem="uDW-fI-ClF" firstAttribute="centerX" secondItem="SSz-At-89w" secondAttribute="centerX" id="qwB-lr-n6Z"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="dPg-Bf-P2Z">
-                        <barButtonItem key="rightBarButtonItem" image="star" catalog="system" id="ekL-nk-8dr">
-                            <connections>
-                                <action selector="isFavoriteAction:" destination="8lh-Q0-fIk" id="rzz-jD-dvH"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="dPg-Bf-P2Z"/>
                     <connections>
-                        <outlet property="favoriteButton" destination="ekL-nk-8dr" id="Wyf-w7-JRj"/>
+                        <outlet property="favoriteButtonStock" destination="7Qp-KT-82t" id="lMy-xY-oLt"/>
+                        <outlet property="logo" destination="uDW-fI-ClF" id="OmI-8S-SUS"/>
+                        <outlet property="nameStock" destination="26K-mi-wz9" id="un3-74-pWU"/>
+                        <outlet property="symbolStock" destination="sfe-kN-6XT" id="8k4-ln-jhT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aib-0C-QfU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2871.0144927536235" y="71.651785714285708"/>
+            <point key="canvasLocation" x="1888" y="72"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HIg-6l-oAB">
@@ -170,28 +176,9 @@
             </objects>
             <point key="canvasLocation" x="47.826086956521742" y="71.651785714285708"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="hQz-7f-iRA">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ubj-mV-nIG" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hif-rq-No0">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="8lh-Q0-fIk" kind="relationship" relationship="rootViewController" id="AOI-FO-Ejb"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="b5h-XY-pZA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1960.8695652173915" y="71.651785714285708"/>
-        </scene>
     </scenes>
     <resources>
         <image name="YNDX" width="600" height="600"/>
-        <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
