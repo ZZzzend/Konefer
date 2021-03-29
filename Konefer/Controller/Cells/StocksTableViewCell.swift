@@ -18,7 +18,7 @@ class StocksTableViewCell: UITableViewCell {
     @IBOutlet weak var regularMarketChange: UILabel!
     @IBOutlet weak var favorite: UIImageView!
     
-    // MARK: - Initializers
+    // MARK: - Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
         logo.layer.masksToBounds = true

@@ -9,7 +9,6 @@ import RealmSwift
 
 class ActionsWithRealmObjects {
     
-    // MARK: - Final Methods
     final func saveObjects(stocks: [StocksData], remove: (), reload: @escaping () -> ()) {
         
         

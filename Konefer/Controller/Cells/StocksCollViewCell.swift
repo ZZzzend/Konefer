@@ -21,7 +21,7 @@ class StocksCollViewCell: UICollectionViewCell {
     // MARK: - Public Properties
     public var fullScreenHandler: ((_ currency: String, _ shortName: String, _ regularMarketChange: Double, _ regularMarketChangePercent: Double, _ regularMarketPrice: Double, _ symbol: String, _ isFavorite: Bool) -> Void)?
     
-    // MARK: - Initializers
+    // MARK: - Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
         

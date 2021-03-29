@@ -13,7 +13,7 @@ class LoadingTableViewCell: UITableViewCell {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var favoriteIsEmptyLabel: UILabel!
     
-    // MARK: - Initializers
+    // MARK: - Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

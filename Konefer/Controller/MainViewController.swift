@@ -21,7 +21,7 @@ class MainViewController: UIViewController {
     public var parsing = ParsingData()
     public var selected = 0
     
-    // MARK: - Initializers
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,9 +30,6 @@ class MainViewController: UIViewController {
         configCollectionViewStocks()
         
         parsing.parsing(reloadTableView: reloadcollectionViewStocks)
-        
-       // collectionViewStocks.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 10.0, right: 0)
-      //  collectionViewStocks.contentInset = UIEdgeInsets(top: 25.0, left: 0, bottom: 0, right: 0)
     }
     
     override func viewWillAppear(_ animated: Bool) {

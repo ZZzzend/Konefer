@@ -15,7 +15,7 @@ class MenuCollViewCell: UICollectionViewCell {
     // MARK: - Private Properties
     private let tabsMenu = ["Stocks", "Favorite"]
     
-    // MARK: - Initializers
+    // MARK: - Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
     }
