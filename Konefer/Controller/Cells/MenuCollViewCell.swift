@@ -18,10 +18,10 @@ class MenuCollViewCell: UICollectionViewCell {
     // MARK: - Initializers
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
-    func setupCell(index: Int, isSelected: Bool) {
+    // MARK: - Final Methods
+    final func setupCell(index: Int, isSelected: Bool) {
         listLabel.text = tabsMenu[index]
         
         if isSelected {

@@ -9,14 +9,17 @@ import UIKit
 
 class LoadingTableViewCell: UITableViewCell {
     
+    // MARK: - IBOutlets
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var favoriteIsEmptyLabel: UILabel!
     
+    // MARK: - Initializers
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
+    // MARK: - Final Methods
     func setupCell(isFavoriteCell: Bool) {
         if isFavoriteCell {
             activityIndicator.isHidden = true

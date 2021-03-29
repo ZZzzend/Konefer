@@ -15,11 +15,11 @@ class StocksCollViewCell: UICollectionViewCell {
     
     // MARK: - Private Properties
     private var stocks = [StocksData]()
-    var stocksRealm: Results<StocksDataRealm>!
-    var isFavorite = false
+    private var stocksRealm: Results<StocksDataRealm>!
+    private var isFavorite = false
     
     // MARK: - Public Properties
-    var fullScreenHandler: ((_ currency: String, _ shortName: String, _ regularMarketChange: Double, _ regularMarketChangePercent: Double, _ regularMarketPrice: Double, _ symbol: String, _ isFavorite: Bool) -> Void)?
+    public var fullScreenHandler: ((_ currency: String, _ shortName: String, _ regularMarketChange: Double, _ regularMarketChangePercent: Double, _ regularMarketPrice: Double, _ symbol: String, _ isFavorite: Bool) -> Void)?
     
     // MARK: - Initializers
     override func awakeFromNib() {
@@ -28,17 +28,8 @@ class StocksCollViewCell: UICollectionViewCell {
         configTableViewStocks()
     }
     
-    func configTableViewStocks() {
-        tableViewStocks.register(UINib(nibName: "StocksTableViewCell", bundle: nil), forCellReuseIdentifier: "StocksTableViewCell")
-        tableViewStocks.dataSource = self
-        tableViewStocks.delegate = self
-        
-        tableViewStocks.register(UINib(nibName: "LoadingTableViewCell", bundle: nil), forCellReuseIdentifier: "LoadingTableViewCell")
-        tableViewStocks.dataSource = self
-        tableViewStocks.delegate = self
-    }
-    
-    func setupCell(stocks: [StocksData], isFavorite: Bool) {
+    // MARK: - Final Methods
+    final func setupCell(stocks: [StocksData], isFavorite: Bool) {
         self.stocks = stocks
         if isFavorite {
             stocksRealm = realm.objects(StocksDataRealm.self).filter("isFavorite == true")
@@ -47,6 +38,17 @@ class StocksCollViewCell: UICollectionViewCell {
         }
         self.isFavorite = isFavorite
         tableViewStocks.reloadData()
+    }
+    
+    // MARK: - Private Methods
+    private func configTableViewStocks() {
+        tableViewStocks.register(UINib(nibName: "StocksTableViewCell", bundle: nil), forCellReuseIdentifier: "StocksTableViewCell")
+        tableViewStocks.dataSource = self
+        tableViewStocks.delegate = self
+        
+        tableViewStocks.register(UINib(nibName: "LoadingTableViewCell", bundle: nil), forCellReuseIdentifier: "LoadingTableViewCell")
+        tableViewStocks.dataSource = self
+        tableViewStocks.delegate = self
     }
     
 }

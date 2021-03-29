@@ -10,8 +10,6 @@ import RealmSwift
 
 class DetailViewController: UIViewController {
     
-    @IBOutlet weak var favoriteButton: UIBarButtonItem!
-    
     @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var symbolStock: UILabel!
     @IBOutlet weak var nameStock: UILabel!
@@ -33,7 +31,8 @@ class DetailViewController: UIViewController {
         changeInitButton()
     }
     
-    public func settings(currency: String, name: String, regularMarketChange: Double, regularMarketChangePercent: Double, regularMarketPrice: Double, symbol: String, isFavorite: Bool) {
+    // MARK: - Final Methods
+    final func settings(currency: String, name: String, regularMarketChange: Double, regularMarketChangePercent: Double, regularMarketPrice: Double, symbol: String, isFavorite: Bool) {
         
         self.currency = currency
         self.name = name
@@ -49,6 +48,7 @@ class DetailViewController: UIViewController {
         saveOrChangeData(symbol)
     }
     
+    // MARK: - Private Methods
     private func changeInitButton() {
         if !self.isFavorite {
             favoriteButtonStock.backgroundColor = .systemGray6

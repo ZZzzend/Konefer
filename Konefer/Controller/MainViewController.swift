@@ -33,7 +33,6 @@ class MainViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-      //  configSearchController()
         collectionViewStocks.reloadData()
     }
     
@@ -43,10 +42,7 @@ class MainViewController: UIViewController {
         search.obscuresBackgroundDuringPresentation = false
         search.searchBar.placeholder = "Search name or ticker"
         
-    //    search.searchBar.sizeToFit()
-    //    search.searchBar.becomeFirstResponder()
         self.navigationItem.searchController = search
-     //   definesPresentationContext = true
         self.navigationItem.hidesSearchBarWhenScrolling = false
     }
     

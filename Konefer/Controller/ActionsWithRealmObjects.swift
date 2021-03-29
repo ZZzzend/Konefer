@@ -9,7 +9,8 @@ import RealmSwift
 
 class ActionsWithRealmObjects {
     
-    func saveObjects(stocks: [StocksData], remove: (), reload: @escaping () -> ()) {
+    // MARK: - Final Methods
+    final func saveObjects(stocks: [StocksData], remove: (), reload: @escaping () -> ()) {
         
         
         _ = stocks.map {

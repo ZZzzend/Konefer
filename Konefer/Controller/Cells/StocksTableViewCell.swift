@@ -18,20 +18,15 @@ class StocksTableViewCell: UITableViewCell {
     @IBOutlet weak var regularMarketChange: UILabel!
     @IBOutlet weak var favorite: UIImageView!
     
-    // MARK: - Lifecycle
+    // MARK: - Initializers
     override func awakeFromNib() {
         super.awakeFromNib()
         logo.layer.masksToBounds = true
         logo.layer.cornerRadius = logo.frame.size.width / 5
-        // Initialization code
     }
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        
-    }
-    
-    func setupCell(currency: String, symbol: String, shortName: String, regularMarketPrice: Double, regularMarketChange: Double, regularMarketChangePercent: Double, isFavorite: Bool, favoriteIsHidden: Bool) {
+    // MARK: - Final Methods
+    final func setupCell(currency: String, symbol: String, shortName: String, regularMarketPrice: Double, regularMarketChange: Double, regularMarketChangePercent: Double, isFavorite: Bool, favoriteIsHidden: Bool) {
         
         if let logo = UIImage(named: "\(symbol)") {
             self.logo.image = logo
@@ -79,12 +74,6 @@ class StocksTableViewCell: UITableViewCell {
         
         self.favorite.isHidden = favoriteIsHidden
         
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
     }
     
 }
