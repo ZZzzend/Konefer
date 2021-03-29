@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5A8D24FBFC70FD2E6DDA73E0 /* Pods_Konefer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FC8B6DC53FC71EF77675FF1 /* Pods_Konefer.framework */; };
+		860B10EA2612424B00B88548 /* SaveOrChangeInRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B10E92612424B00B88548 /* SaveOrChangeInRealm.swift */; };
 		8669026225DF8E8B00CFA6DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8669026125DF8E8B00CFA6DB /* AppDelegate.swift */; };
 		8669026425DF8E8B00CFA6DB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8669026325DF8E8B00CFA6DB /* SceneDelegate.swift */; };
 		8669026625DF8E8B00CFA6DB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8669026525DF8E8B00CFA6DB /* MainViewController.swift */; };
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		3FC8B6DC53FC71EF77675FF1 /* Pods_Konefer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Konefer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47D334CC05EC468DD83EF2E1 /* Pods-Konefer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Konefer.release.xcconfig"; path = "Target Support Files/Pods-Konefer/Pods-Konefer.release.xcconfig"; sourceTree = "<group>"; };
+		860B10E92612424B00B88548 /* SaveOrChangeInRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveOrChangeInRealm.swift; sourceTree = "<group>"; };
 		8669025E25DF8E8B00CFA6DB /* Konefer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Konefer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8669026125DF8E8B00CFA6DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8669026325DF8E8B00CFA6DB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				867A3DE625EA0521007C619E /* Cells */,
 				8669026525DF8E8B00CFA6DB /* MainViewController.swift */,
 				86CBFAC3260DFCD500858BAC /* DetailViewController.swift */,
+				860B10E92612424B00B88548 /* SaveOrChangeInRealm.swift */,
 				8679761E25F0EF3D00B84A97 /* ParsingData.swift */,
 				86705D54260D79E1004BAAA7 /* ActionsWithRealmObjects.swift */,
 				867A3DE725EA0566007C619E /* MainVCDataSource.swift */,
@@ -298,6 +301,7 @@
 				867A3DE825EA0566007C619E /* MainVCDataSource.swift in Sources */,
 				867B5355260B49B80052D34B /* SearchData.swift in Sources */,
 				8669027825DF978B00CFA6DB /* MenuCollViewCell.swift in Sources */,
+				860B10EA2612424B00B88548 /* SaveOrChangeInRealm.swift in Sources */,
 				86E49E6825EA0A390037B115 /* StocksTableViewCell.swift in Sources */,
 				867A3DE025EA0262007C619E /* StocksCollViewCell.swift in Sources */,
 				86E49E6425EA06DC0037B115 /* MainVCDelegate.swift in Sources */,

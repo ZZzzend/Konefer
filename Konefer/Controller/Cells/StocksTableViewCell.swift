@@ -18,20 +18,6 @@ class StocksTableViewCell: UITableViewCell {
     @IBOutlet weak var regularMarketChange: UILabel!
     @IBOutlet weak var favorite: UIImageView!
     
-    // MARK: - Private Properties
-    private var setCurrency: (String) -> String = {
-        switch $0 {
-        case "USD":
-            return "$"
-        case "RUB":
-            return "₽"
-        case "EUR":
-            return "€"
-        default:
-            return ""
-        }
-    }
-    
     // MARK: - Initializers
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -67,7 +53,7 @@ class StocksTableViewCell: UITableViewCell {
             let url = URL(string: "https://finnhub.io/api/logo?symbol=\(symbol)")
             self.logo.contentMode = .scaleAspectFit
             self.logo.kf.setImage(with: url,
-                                  placeholder: UIImage(systemName: "questionmark.circle.fill"))
+                                  placeholder: UIImage(named: "Question"))
         }
     }
     
@@ -76,8 +62,14 @@ class StocksTableViewCell: UITableViewCell {
             self.regularMarketPrice.text = ""
             self.regularMarketChange.text = ""
         } else {
-            self.regularMarketPrice.text = setCurrency(currency) + String(format: "%.2f", regularMarketPrice)
-            self.regularMarketChange.text = setCurrency(currency) + String(format: "%.2f", abs(regularMarketChange)) + " " + "(\(String(format: "%.2f", abs(regularMarketChangePercent)))%)"
+            
+            let formatter = NumberFormatter()
+            formatter.numberStyle = .currency
+            formatter.currencyCode = currency
+            
+            self.regularMarketPrice.text = formatter.string(from: NSNumber(value: regularMarketPrice))
+            self.regularMarketChange.text = formatter.string(from: NSNumber(value: abs(Int(regularMarketChange))))! + " " + "(\(String(format: "%.2f", abs(regularMarketChangePercent)))%)"
+
             
             if regularMarketChange < 0 {
                 self.regularMarketChange.textColor = .red

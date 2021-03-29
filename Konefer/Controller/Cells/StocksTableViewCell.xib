@@ -64,7 +64,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yandex, LLC" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MRB-eJ-n9I">
                                 <rect key="frame" x="0.0" y="27" width="70" height="14.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="140" id="3bU-lx-GeJ"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="130" id="3bU-lx-GeJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
@@ -74,14 +74,14 @@
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="QbT-xH-tVB" secondAttribute="bottom" constant="15" id="73z-2W-jz8"/>
+                    <constraint firstAttribute="bottom" secondItem="QbT-xH-tVB" secondAttribute="bottom" priority="999" constant="15" id="73z-2W-jz8"/>
                     <constraint firstItem="QbT-xH-tVB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="ItE-S9-ZLP"/>
                     <constraint firstItem="Ojj-pK-P76" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="KoJ-tM-r7n"/>
                     <constraint firstItem="QbT-xH-tVB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="OKI-Sr-zyq"/>
                     <constraint firstItem="Ojj-pK-P76" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="f1v-1Z-sVo" secondAttribute="trailing" constant="20" id="Ryh-gi-dWa"/>
                     <constraint firstItem="f1v-1Z-sVo" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="iIr-sR-w8w"/>
                     <constraint firstAttribute="trailing" secondItem="Ojj-pK-P76" secondAttribute="trailing" constant="20" symbolic="YES" id="n4m-X7-ioH"/>
-                    <constraint firstItem="f1v-1Z-sVo" firstAttribute="leading" secondItem="QbT-xH-tVB" secondAttribute="trailing" priority="999" constant="15" id="pjc-9P-QbX"/>
+                    <constraint firstItem="f1v-1Z-sVo" firstAttribute="leading" secondItem="QbT-xH-tVB" secondAttribute="trailing" constant="15" id="pjc-9P-QbX"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

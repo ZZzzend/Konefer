@@ -11,13 +11,13 @@ import Kingfisher
 
 class DetailViewController: UIViewController {
     
+    // MARK: - IBOutlets
     @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var symbolStock: UILabel!
     @IBOutlet weak var nameStock: UILabel!
     @IBOutlet weak var favoriteButtonStock: UIButton!
     
-    private var stocksRealm: Results<StocksDataRealm>!
-    
+    // MARK: - Private Properties
     private var currency = ""
     private var name = ""
     private var regularMarketChange = 0.0
@@ -25,7 +25,10 @@ class DetailViewController: UIViewController {
     private var regularMarketPrice = 0.0
     private var symbol = ""
     private var isFavorite = false
+    
+    private let saveOrChangeObject = SaveOrChangeObject()
 
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setOutlets()
@@ -46,7 +49,7 @@ class DetailViewController: UIViewController {
     
     @IBAction func favoriteActionStock(_ sender: Any) {
         isFavorite = changeButton(isFavorite)
-        saveOrChangeData(symbol)
+        saveOrChangeObject.saveOrChangeData(currency: currency, name: name, regularMarketPrice: regularMarketPrice, regularMarketChange: regularMarketChange, regularMarketChangePercent: regularMarketChangePercent, symbol: symbol, isFavorite: isFavorite)
     }
     
     // MARK: - Private Methods
@@ -68,7 +71,7 @@ class DetailViewController: UIViewController {
             self.logo.image = logo
         } else {
             let url = URL(string: "https://finnhub.io/api/logo?symbol=\(symbol)")
-            self.logo.kf.setImage(with: url, placeholder: UIImage(systemName: "questionmark.circle.fill"))
+            self.logo.kf.setImage(with: url, placeholder: UIImage(named: "Question"))
         }
         
         self.symbolStock.text = symbol
@@ -87,20 +90,6 @@ class DetailViewController: UIViewController {
         }
         
         return !isChange
-    }
-    
-    private func saveOrChangeData(_ forPrimaryKey: String) {
-        let stocksData = realm.object(ofType: StocksDataRealm.self, forPrimaryKey: forPrimaryKey)
-        
-        let newStock = StocksDataRealm(currency: currency, name: name, regularMarketPrice: regularMarketPrice, regularMarketChange: regularMarketChange, regularMarketChangePercent: regularMarketChangePercent, symbol: symbol, isFavorite: isFavorite)
-        
-        if let stock = stocksData  {
-            try! realm.write {
-                stock.isFavorite = newStock.isFavorite
-            }
-        } else {
-            StorageManager.saveObject(newStock)
-        }
     }
     
 }
