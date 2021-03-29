@@ -7,5 +7,6 @@ target 'Konefer' do
 
   # Pods for Konefer
   pod 'RealmSwift', '=10.1.4'
+  pod 'Kingfisher', '~> 6.0'
 
 end

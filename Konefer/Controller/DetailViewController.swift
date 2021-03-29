@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import Kingfisher
 
 class DetailViewController: UIViewController {
     
@@ -66,7 +67,8 @@ class DetailViewController: UIViewController {
         if let logo = UIImage(named: "\(symbol)") {
             self.logo.image = logo
         } else {
-            self.logo.image = UIImage(systemName: "questionmark.circle.fill")
+            let url = URL(string: "https://finnhub.io/api/logo?symbol=\(symbol)")
+            self.logo.kf.setImage(with: url, placeholder: UIImage(systemName: "questionmark.circle.fill"))
         }
         
         self.symbolStock.text = symbol

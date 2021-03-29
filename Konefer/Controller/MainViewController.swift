@@ -30,10 +30,17 @@ class MainViewController: UIViewController {
         configCollectionViewStocks()
         
         parsing.parsing(reloadTableView: reloadcollectionViewStocks)
+        
+       // collectionViewStocks.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 10.0, right: 0)
+      //  collectionViewStocks.contentInset = UIEdgeInsets(top: 25.0, left: 0, bottom: 0, right: 0)
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        search.isActive = false
+        search.searchBar.text = ""
+        
         collectionViewStocks.reloadData()
+        collectionViewNames.reloadData()
     }
     
     // MARK: - Private Methods

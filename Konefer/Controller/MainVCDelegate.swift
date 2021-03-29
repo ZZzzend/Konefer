@@ -12,7 +12,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch collectionView {
         case collectionViewStocks:
-            return CGSize(width: collectionView.frame.width, height: collectionView.frame.height - 10)
+            return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
         default:
             return CGSize(width: collectionView.frame.width / 3, height: collectionView.frame.height)
         }

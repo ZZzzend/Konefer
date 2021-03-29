@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Kingfisher
 
 class StocksTableViewCell: UITableViewCell {
     
@@ -18,6 +18,20 @@ class StocksTableViewCell: UITableViewCell {
     @IBOutlet weak var regularMarketChange: UILabel!
     @IBOutlet weak var favorite: UIImageView!
     
+    // MARK: - Private Properties
+    private var setCurrency: (String) -> String = {
+        switch $0 {
+        case "USD":
+            return "$"
+        case "RUB":
+            return "₽"
+        case "EUR":
+            return "€"
+        default:
+            return ""
+        }
+    }
+    
     // MARK: - Initializers
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,43 +42,8 @@ class StocksTableViewCell: UITableViewCell {
     // MARK: - Final Methods
     final func setupCell(currency: String, symbol: String, shortName: String, regularMarketPrice: Double, regularMarketChange: Double, regularMarketChangePercent: Double, isFavorite: Bool, favoriteIsHidden: Bool) {
         
-        if let logo = UIImage(named: "\(symbol)") {
-            self.logo.image = logo
-        } else {
-            self.logo.image = UIImage(systemName: "questionmark.circle.fill")
-        }
-        
-        var value = ""
-        
-        switch currency {
-        case "USD":
-            value = "$"
-        case "RUB":
-            value = "₽"
-        case "EUR":
-            value = "€"
-        default:
-            value = "?"
-        }
-        
         self.symbol.text = symbol
         self.shortName.text = shortName
-        
-        if regularMarketPrice == 0.00 {
-            self.regularMarketPrice.text = ""
-            self.regularMarketChange.text = ""
-        } else {
-            self.regularMarketPrice.text = value + String(format: "%.2f", regularMarketPrice)
-            self.regularMarketChange.text = value + String(format: "%.2f", abs(regularMarketChange)) + " " + "(\(String(format: "%.2f", abs(regularMarketChangePercent)))%)"
-            
-            if regularMarketChange < 0 {
-                self.regularMarketChange.textColor = .red
-                self.regularMarketChange.text = "-" + self.regularMarketChange.text!
-            } else {
-                self.regularMarketChange.textColor = .systemGreen
-                self.regularMarketChange.text = "+" + self.regularMarketChange.text!
-            }
-        }
         
         if isFavorite {
             self.favorite.image = UIImage(systemName: "star.fill")
@@ -74,6 +53,40 @@ class StocksTableViewCell: UITableViewCell {
         
         self.favorite.isHidden = favoriteIsHidden
         
+        setLogo(symbol: symbol)
+        setPrice(regularMarketPrice: regularMarketPrice, regularMarketChange: regularMarketChange, regularMarketChangePercent: regularMarketChangePercent, currency: currency)
+    }
+    
+    
+    private func setLogo(symbol: String) {
+        if let logo = UIImage(named: "\(symbol)") {
+            self.logo.contentMode = .scaleAspectFill
+            self.logo.image = logo
+        } else {
+            
+            let url = URL(string: "https://finnhub.io/api/logo?symbol=\(symbol)")
+            self.logo.contentMode = .scaleAspectFit
+            self.logo.kf.setImage(with: url,
+                                  placeholder: UIImage(systemName: "questionmark.circle.fill"))
+        }
+    }
+    
+    private func setPrice(regularMarketPrice: Double, regularMarketChange: Double, regularMarketChangePercent: Double, currency: String) {
+        if regularMarketPrice == 0.00 {
+            self.regularMarketPrice.text = ""
+            self.regularMarketChange.text = ""
+        } else {
+            self.regularMarketPrice.text = setCurrency(currency) + String(format: "%.2f", regularMarketPrice)
+            self.regularMarketChange.text = setCurrency(currency) + String(format: "%.2f", abs(regularMarketChange)) + " " + "(\(String(format: "%.2f", abs(regularMarketChangePercent)))%)"
+            
+            if regularMarketChange < 0 {
+                self.regularMarketChange.textColor = .red
+                self.regularMarketChange.text = "-" + self.regularMarketChange.text!
+            } else {
+                self.regularMarketChange.textColor = .systemGreen
+                self.regularMarketChange.text = "+" + self.regularMarketChange.text!
+            }
+        }
     }
     
 }

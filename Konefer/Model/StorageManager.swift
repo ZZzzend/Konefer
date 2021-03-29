@@ -18,13 +18,6 @@ class StorageManager {
         }
     }
     
-    static func modifiedObject(_ stock: StocksDataRealm) {
-        
-        try! realm.write {
-            realm.add(stock, update: .modified)
-        }
-    }
-    
     static func deleteObject(_ stock: StocksDataRealm) {
         
         try! realm.write {

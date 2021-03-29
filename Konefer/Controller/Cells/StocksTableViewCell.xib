@@ -81,7 +81,7 @@
                     <constraint firstItem="Ojj-pK-P76" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="f1v-1Z-sVo" secondAttribute="trailing" constant="20" id="Ryh-gi-dWa"/>
                     <constraint firstItem="f1v-1Z-sVo" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="iIr-sR-w8w"/>
                     <constraint firstAttribute="trailing" secondItem="Ojj-pK-P76" secondAttribute="trailing" constant="20" symbolic="YES" id="n4m-X7-ioH"/>
-                    <constraint firstItem="f1v-1Z-sVo" firstAttribute="leading" secondItem="QbT-xH-tVB" secondAttribute="trailing" constant="15" id="pjc-9P-QbX"/>
+                    <constraint firstItem="f1v-1Z-sVo" firstAttribute="leading" secondItem="QbT-xH-tVB" secondAttribute="trailing" priority="999" constant="15" id="pjc-9P-QbX"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
