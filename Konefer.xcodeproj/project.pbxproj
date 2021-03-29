@@ -25,6 +25,8 @@
 		867A3DE125EA0262007C619E /* StocksCollViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 867A3DDF25EA0262007C619E /* StocksCollViewCell.xib */; };
 		867A3DE825EA0566007C619E /* MainVCDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867A3DE725EA0566007C619E /* MainVCDataSource.swift */; };
 		867B5355260B49B80052D34B /* SearchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867B5354260B49B80052D34B /* SearchData.swift */; };
+		867BC91A26116C5800E0914D /* LoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867BC91826116C5800E0914D /* LoadingTableViewCell.swift */; };
+		867BC91B26116C5800E0914D /* LoadingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 867BC91926116C5800E0914D /* LoadingTableViewCell.xib */; };
 		86CBFAC4260DFCD500858BAC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CBFAC3260DFCD500858BAC /* DetailViewController.swift */; };
 		86E49E6425EA06DC0037B115 /* MainVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E49E6325EA06DC0037B115 /* MainVCDelegate.swift */; };
 		86E49E6825EA0A390037B115 /* StocksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E49E6625EA0A390037B115 /* StocksTableViewCell.swift */; };
@@ -53,6 +55,8 @@
 		867A3DDF25EA0262007C619E /* StocksCollViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StocksCollViewCell.xib; sourceTree = "<group>"; };
 		867A3DE725EA0566007C619E /* MainVCDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVCDataSource.swift; sourceTree = "<group>"; };
 		867B5354260B49B80052D34B /* SearchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchData.swift; sourceTree = "<group>"; };
+		867BC91826116C5800E0914D /* LoadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableViewCell.swift; sourceTree = "<group>"; };
+		867BC91926116C5800E0914D /* LoadingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingTableViewCell.xib; sourceTree = "<group>"; };
 		86CBFAC3260DFCD500858BAC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		86E49E6325EA06DC0037B115 /* MainVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVCDelegate.swift; sourceTree = "<group>"; };
 		86E49E6625EA0A390037B115 /* StocksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksTableViewCell.swift; sourceTree = "<group>"; };
@@ -156,6 +160,8 @@
 				867A3DDF25EA0262007C619E /* StocksCollViewCell.xib */,
 				86E49E6625EA0A390037B115 /* StocksTableViewCell.swift */,
 				86E49E6725EA0A390037B115 /* StocksTableViewCell.xib */,
+				867BC91826116C5800E0914D /* LoadingTableViewCell.swift */,
+				867BC91926116C5800E0914D /* LoadingTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -233,6 +239,7 @@
 				867A3DE125EA0262007C619E /* StocksCollViewCell.xib in Resources */,
 				8669026B25DF8E8C00CFA6DB /* Assets.xcassets in Resources */,
 				8669026925DF8E8B00CFA6DB /* Main.storyboard in Resources */,
+				867BC91B26116C5800E0914D /* LoadingTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8679761F25F0EF3D00B84A97 /* ParsingData.swift in Sources */,
+				867BC91A26116C5800E0914D /* LoadingTableViewCell.swift in Sources */,
 				8679761C25F0E7A400B84A97 /* StocksData.swift in Sources */,
 				867A3DE825EA0566007C619E /* MainVCDataSource.swift in Sources */,
 				867B5355260B49B80052D34B /* SearchData.swift in Sources */,

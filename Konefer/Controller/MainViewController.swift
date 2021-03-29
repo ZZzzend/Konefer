@@ -29,7 +29,7 @@ class MainViewController: UIViewController {
         configcollectionViewNames()
         configCollectionViewStocks()
         
-    //    parsing.parsing(reloadTableView: reloadcollectionViewStocks)
+        parsing.parsing(reloadTableView: reloadcollectionViewStocks)
     }
     
     override func viewWillAppear(_ animated: Bool) {
